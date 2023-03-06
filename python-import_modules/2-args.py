@@ -1,12 +1,21 @@
 #!/usr/bin/python3
+
+import sys
+
 if __name__ == "__main__":
-    import sys
-    count = len(sys.argv) - 1
-    if count == 0:
-        print("0 arguments.")
-    elif count == 1:
-        print("1 argument:")
+    args = sys.argv[1:]
+    argstr = 'argument'
+    lengthofargs = len(args)
+
+    if lengthofargs == 0:
+        argstr = argstr + 's.'
+    elif lengthofargs == 1:
+        argstr = argstr + ':'
     else:
-        print("{} arguments:". format(count))
-    for i in range(count):
-        print("{}: {}". format(i + 1, sys.argv[i + 1]))
+        argstr = argstr + 's:'
+
+    print(lengthofargs, argstr)
+
+    if lengthofargs > 0:
+        for i in range(lengthofargs):
+            print('{}: {}'.format(i+1, args[i]))
