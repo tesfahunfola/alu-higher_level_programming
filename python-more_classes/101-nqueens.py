@@ -4,6 +4,7 @@
 global N
 N = 4
 
+
 def printSolution(board):
     for i in range(N):
         for j in range(N):
@@ -16,6 +17,7 @@ def printSolution(board):
 # already placed in columns from 0 to col -1.
 # So we need to check only left side for
 # attacking queens
+
 
 def isSafe(board, row, col):
 
@@ -35,6 +37,7 @@ def isSafe(board, row, col):
             return False
 
     return True
+
 
 def solveNQUtil(board, col):
 
