@@ -1,4 +1,4 @@
 #!/usr/bin/node
-myVar firstPrint = "JavaScript is amazing";
+var firstPrint = "JavaScript is amazing";
 console.log(firstPrint);
 
