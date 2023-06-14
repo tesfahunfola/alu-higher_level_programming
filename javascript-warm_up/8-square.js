@@ -1,11 +1,13 @@
 #!/usr/bin/node
-const x = parseInt(process.argv[2]);
-if (isNaN(x)) {
-   console.log('Missing size');
- }else {
-	if (x > 0){
-          for (i = 0; i < x; i++){
-			 console.log('x'.repeat(x));
-		 }
-	 }
- }
+const size = parseInt(process.argv[2]);
+
+if (isNaN(size)) {
+  console.log('Missing size');
+} else {
+  if (size > 0) {
+    for (let i = 0; i < size; i++) {
+      console.log('X'.repeat(size).toUpperCase());
+    }
+  }
+}
+
