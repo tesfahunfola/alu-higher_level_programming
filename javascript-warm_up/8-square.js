@@ -10,4 +10,3 @@ if (isNaN(size)) {
     }
   }
 }
-
