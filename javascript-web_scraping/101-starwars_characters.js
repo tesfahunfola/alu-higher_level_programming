@@ -26,8 +26,12 @@ request.get(`https://swapi.dev/api/films/${movieId}/`, (error, response, body) =
 
           // Check if all characters have been fetched
           if (characterNames.length === characterUrls.length) {
-            // Print the character names in the correct order
-            characterNames.forEach((name) => console.log(name));
+            // Print the character names in the same order as the characterUrls list
+            characterUrls.forEach((url) => {
+              const characterId = url.split('/').slice(-2, -1)[0];
+              const characterName = characterNames[characterId - 1];
+              console.log(characterName);
+            });
           }
         }
       });
