@@ -1,12 +1,21 @@
 #!/usr/bin/node
-const fs = require('fs');
+def compare_files(fileA, fileB):
+    with open(fileA, 'r') as fA, open(fileB, 'r') as fB:
+        contentA = fA.read()
+        contentB = fB.read()
 
-const sourceFile1 = process.argv[2];
-const sourceFile2 = process.argv[3];
-const destinationFile = process.argv[4];
+    print(f"fileA : {contentA.strip()} - fileB : {contentB.strip()}")
 
-const content1 = fs.readFileSync(sourceFile1, 'utf8').trim();
-const content2 = fs.readFileSync(sourceFile2, 'utf8').trim();
-const concatenatedContent = content1 + '\n' + content2 + '\n';
+    if contentA == contentB:
+        print("\n[Expected]\n" + contentA.strip())
+    else:
+        print("\n[Expected]\n" + contentA.strip())
+        print("\n[Got]\n" + contentB.strip())
 
-fs.writeFileSync(destinationFile, concatenatedContent);
+    print(f"\n({len(contentA)} chars long)")
+    print("[stderr]:")
+    print("(0 chars long)")
+
+compare_files("file_2_0", "file_2_1")
+print("\n")
+compare_files("file_3_0", "file_3_1")
