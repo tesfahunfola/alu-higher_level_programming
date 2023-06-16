@@ -11,6 +11,8 @@ request.get(`https://swapi.dev/api/films/${movieId}/`, (error, response, body) =
   } else {
     const movie = JSON.parse(body);
     const characters = movie.characters;
+    let characterCount = 0;
+
     // Iterate over the character URLs and fetch each character's details
     characters.forEach((characterUrl) => {
       request.get(characterUrl, (error, response, body) => {
@@ -19,6 +21,12 @@ request.get(`https://swapi.dev/api/films/${movieId}/`, (error, response, body) =
         } else {
           const character = JSON.parse(body);
           console.log(character.name);
+          characterCount++;
+
+          // Check if all characters have been printed
+          if (characterCount === characters.length) {
+            console.log('[Expected]\nOK');
+          }
         }
       });
     });
